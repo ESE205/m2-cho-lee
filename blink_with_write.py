@@ -25,13 +25,13 @@ with open('data.txt', 'w') as data:
         if GPIO.input(pin2):
             GPIO.output(pin1, GPIO.HIGH) # Turn on
             data.write(f'{time.time():1.0f}\t{GPIO.input(pin2)}\n')
-            sleep(blinkrate)                     
+            sleep(blinkrate / 2)                     
             GPIO.output(pin1, GPIO.LOW)  # Turn off
             data.write(f'{time.time():1.0f}\t{GPIO.input(pin2)}\n')
-            sleep(blinkrate)
+            sleep(blinkrate / 2)
             iteration += 1
         if debug: 
             date_t = datetime.fromtimestamp(time.time())
-            print(f'Formatted Date : {date_t}\tNumber of Iteration : {iteration}\tSwitch State: {GPIO.input(pin2)}\n')
+            print(f'Formatted Date : {date_t}\tNumber of Iteration : {iteration}\tSwitch State : {GPIO.input(pin2)}\n')
                
     
