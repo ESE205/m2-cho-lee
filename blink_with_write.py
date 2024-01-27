@@ -15,7 +15,7 @@ debug = False
 if '-debug' in sys.argv:
     debug = True
 
-blinkrate = int(input('Enter the blink rate: '))
+blinkrate = float(input('Enter the blink interval in seconds: '))
 max_time = int(input('Enter the amount of time you want to run this in seconds: '))
 iteration = 0
 
