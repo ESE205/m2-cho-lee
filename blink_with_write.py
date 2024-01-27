@@ -23,14 +23,14 @@ with open('data.txt', 'w') as data:
     while (time.time() - start_time) < max_time: 
         if GPIO.input(pin2):
             GPIO.output(pin1, GPIO.HIGH) # Turn on
-            data.write(f,{time.time():1.0f}\t{GPIO.input(pin2)})
+            data.write(f,{'time.time():1.0f}\t{GPIO.input(pin2)}\n')
             sleep(blinkrate)                     
             GPIO.output(pin1, GPIO.LOW)  # Turn off
-            data.write(f,{time.time():1.0f}\t{GPIO.input(pin2)})
+            data.write(f,{'time.time():1.0f}\t{GPIO.input(pin2)}\n')
             sleep(blinkrate)
             iteration += 1
         if debug: 
             date_t = datetime.fromtimestamp(time.time())
-            print(f,Formatted Date : {date_t.strftime('%m_%d_%Y_%H_%M_%S')}\tNumber of Iteration : {iteration}\tSwitch State: {GPIO.input(pin2)}')
+            print(f,'Formatted Date : {date_t.strftime('%m_%d_%Y_%H_%M_%S')}\tNumber of Iteration : {iteration}\tSwitch State: {GPIO.input(pin2)}\n')
                
     
