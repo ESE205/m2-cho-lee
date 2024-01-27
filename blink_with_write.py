@@ -16,7 +16,7 @@ if '-debug' in sys.argv:
     debug = True
 
 blinkrate = float(input('Enter the blink interval in seconds: '))
-max_time = int(input('Enter the amount of time you want to run this in seconds: '))
+max_time = int(input('Enter the amount of time you want to run this program in seconds: '))
 iteration = 0
 
 def printstatus():
