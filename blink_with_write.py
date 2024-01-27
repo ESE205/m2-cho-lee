@@ -19,6 +19,10 @@ blinkrate = float(input('Enter the blink interval in seconds: '))
 max_time = int(input('Enter the amount of time you want to run this in seconds: '))
 iteration = 0
 
+def printstatus():
+    date_t = datetime.fromtimestamp(time.time())
+    print(f'Formatted Date : {date_t}\tNumber of Iteration : {iteration}\tSwitch State : {GPIO.input(pin2)}\n')
+    
 with open('data.txt', 'w') as data:
     start_time = time.time()
     while (time.time() - start_time) < max_time: 
@@ -30,8 +34,9 @@ with open('data.txt', 'w') as data:
             data.write(f'{time.time():1.0f}\t{GPIO.input(pin2)}\n')
             sleep(blinkrate / 2)
             iteration += 1
-        if debug: 
-            date_t = datetime.fromtimestamp(time.time())
-            print(f'Formatted Date : {date_t}\tNumber of Iteration : {iteration}\tSwitch State : {GPIO.input(pin2)}\n')
-               
-    
+            if debug: 
+                printstatus()
+        else:
+            iteration += 1
+            if debug: 
+                printstatus()
