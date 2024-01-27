@@ -39,4 +39,5 @@ with open('data.txt', 'w') as data:
         else:
             iteration += 1
             if debug: 
+                sleep(blinkrate)
                 printstatus()
