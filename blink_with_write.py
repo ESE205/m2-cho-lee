@@ -38,6 +38,6 @@ with open('data.txt', 'w') as data:
                 printstatus()
         else:
             iteration += 1
+            sleep(1)
             if debug: 
-                sleep(1)
                 printstatus()
